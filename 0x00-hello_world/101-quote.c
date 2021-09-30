@@ -10,8 +10,11 @@ int main(void)
 
 	for (i = 0; i < 60; i++)
 	{
+		if (str[i] == '\0')
+		{
+			str[i] = '\n';
+		}
 		putc(str[i], stderr);
 	}
-	putc('\n', stderr);
 	return (1);
-i}
+}
