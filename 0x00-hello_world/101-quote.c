@@ -12,7 +12,6 @@ int main(void)
 	{
 		putc(str[i], stderr);
 	}
-	str[i] = '\n';
 	putc(str[i], stderr);
 	return (1);
 }
