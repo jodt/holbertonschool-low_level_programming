@@ -1,6 +1,9 @@
 #include<stdio.h>
-/*print string with printf*/
-int main(int argc, char *argv[])
+/**
+main - Print string with printf
+Return: return 0
+*/
+int main(void)
 {
 	char str[] = "with proper grammar, but the outcome is a piece of art,";
 
