@@ -5,13 +5,13 @@
  */
 int main(void)
 {
-	char str[60] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+	char str[59] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
 	int i;
 
 	for (i = 0; i < 60; i++)
 	{
 		putc(str[i], stderr);
 	}
-	putc(str[i], stderr);
+	putc('\n', stderr);
 	return (1);
-}
+i}
