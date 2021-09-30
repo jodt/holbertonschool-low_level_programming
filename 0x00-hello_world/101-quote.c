@@ -8,7 +8,7 @@ int main(void)
 	char str[59] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
 	int i;
 
-	for (i = 0; i < 60; i++)
+	for (i = 0; i < 59; i++)
 	{
 		if (str[i] == '\0')
 		{
