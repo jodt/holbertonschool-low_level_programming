@@ -3,9 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - function which displays if number is negative ,positive or equal to 0
- * @n: the number to be checked
- *
+ * main - function which displays if number is - , +  or = to 0
  * Return: return 0
  */
 int main(void)
