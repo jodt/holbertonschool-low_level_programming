@@ -4,8 +4,6 @@
 
 /**
  * main - check if last digit of a number is >5, or <6 and != 0, or equal to 0
- * @n: The number to be checked
- *
  * Return: return 0
  */
 int main(void)
