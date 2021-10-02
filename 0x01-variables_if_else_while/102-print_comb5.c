@@ -17,7 +17,7 @@ int main(void)
 				{
 					if (i == 48 && j == 48 && k == 48)
 						l++;
-					if (l == j && j != 48)
+					if (l == j && j > 48)
 						l++;
 					putchar(i);
 					putchar(j);
