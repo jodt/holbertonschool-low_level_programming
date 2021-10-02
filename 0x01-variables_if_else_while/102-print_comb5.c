@@ -5,37 +5,37 @@
  */
 int main(void)
 {
-	int i, j, k, l;
+	int i = 48, j = 48, k = 48, l = 48;
 
-	for (i = 48; i < 58; i++)
+	while (i < 58 && j < 58)
 	{
-		for (j = 48; j < 57; j++)
+		if (i > 48 && j > 48 && k == 58 && l == 48)
 		{
-			for (k = i; k < 58; k++)
-			{
-				for (l = j; l < 58; l++)
-				{
-					if (i == 48 && j == 48 && k == 48 && l == 48)
-						l = 49;
-					if (l == j && j > 48)
-						l++;
-					putchar(i);
-					putchar(j);
-					putchar (' ');
-					putchar(k);
-					putchar(l);
-					if (i == 57 && j == 56 && k == 57 && l == 57)
-					{
-						putchar('\n');
-					}
-					else
-					{
-						putchar(',');
-						putchar(' ');
-					}
-				}
-			}
+			k = i;
+			l = j + 1;
 		}
+		else
+		{
+			k = 48;
+			l = 49;
+		}
+		while (k < 58 && l < 58)
+		{
+			putchar(i);
+			putchar(j);
+			putchar(' ');
+			putchar(k);
+			putchar(l);
+			if (i != 57 || j != 56)
+			{
+				putchar(',');
+				putchar(' ');
+			}
+			l == 57 ? l = 48, k++ : l++;
+		}
+		j == 57 ? j = 48, i++ : j++;
+		i == k ? j++ : '\0';
 	}
+	putchar ('\n');
 	return (0);
 }
