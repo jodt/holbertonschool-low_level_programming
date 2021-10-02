@@ -9,12 +9,14 @@ int main(void)
 
 	for (i = 48; i < 58; i++)
 	{
-		for (j = 48; j < 58; j++)
+		for (j = 48; j < 57; j++)
 		{
 			for (k = i; k < 58; k++)
 			{
-				for (l = j + 1; l < 58; l++)
+				for (l = j; l < 58; l++)
 				{
+					if (l == j)
+						l++;
 					putchar(i);
 					putchar(j);
 					putchar (' ');
