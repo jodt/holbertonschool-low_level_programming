@@ -34,7 +34,6 @@ int main(void)
 			l == 57 ? l = 48, k++ : l++;
 		}
 		j == 57 ? j = 48, i++ : j++;
-		i == k ? j++ : '\0';
 	}
 	putchar ('\n');
 	return (0);
