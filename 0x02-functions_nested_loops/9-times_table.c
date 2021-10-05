@@ -20,7 +20,7 @@ void times_table(void)
 				unite = multiplication % 10;
 				_putchar('0' + dizaine);
 				_putchar('0' + unite);
-				}
+			}
 			else
 			{
 			_putchar('0' + multiplication);
@@ -31,18 +31,15 @@ void times_table(void)
 			{
 				_putchar('\n');
 			}
-			else if (multiplication > 9)
+			if (compteur < 10)
 			{
 				_putchar(',');
 				_putchar(' ');
-			}
-			else if (multiplication < 10)
-			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
+				if(multiplication <= 9)
+					_putchar(' ');
 			}
 		}
+
 		first_number++;
 	}
 }
