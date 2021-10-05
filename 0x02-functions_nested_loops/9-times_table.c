@@ -18,12 +18,15 @@ void times_table(void)
 			{
 				dizaine = multiplication / 10;
 				unite = multiplication % 10;
+				_putchar(' ');
 				_putchar('0' + dizaine);
 				_putchar('0' + unite);
 			}
 			else
 			{
-			_putchar('0' + multiplication);
+				_putchar(' ');
+				_putchar(' ');
+				_putchar('0' + multiplication);
 			}
 			second_number++;
 			compteur++;
@@ -31,12 +34,9 @@ void times_table(void)
 			{
 				_putchar('\n');
 			}
-			if (compteur < 10)
+			if (compteur > 1 && compteur < 10)
 			{
 				_putchar(',');
-				_putchar(' ');
-				if(multiplication <= 9)
-					_putchar(' ');
 			}
 		}
 
