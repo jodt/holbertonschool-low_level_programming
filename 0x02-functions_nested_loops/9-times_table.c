@@ -24,8 +24,11 @@ void times_table(void)
 			}
 			else
 			{
-				_putchar(' ');
-				_putchar(' ');
+				if (compteur > 0)
+				{
+					_putchar(' ');
+					_putchar(' ');
+				}
 				_putchar('0' + multiplication);
 			}
 			second_number++;
@@ -39,7 +42,6 @@ void times_table(void)
 				_putchar(',');
 			}
 		}
-
 		first_number++;
 	}
 }
