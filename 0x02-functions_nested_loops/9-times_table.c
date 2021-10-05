@@ -34,7 +34,7 @@ void times_table(void)
 			{
 				_putchar('\n');
 			}
-			if (compteur > 1 && compteur < 10)
+			if (compteur < 10)
 			{
 				_putchar(',');
 			}
