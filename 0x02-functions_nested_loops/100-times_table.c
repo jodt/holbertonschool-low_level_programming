@@ -18,12 +18,10 @@ void print_times_table(int n)
 					_putchar('0' + multiplication / 100);
 				else if (second != 0)
 					_putchar(' ');
-			
 				if (multiplication > 9)
 					_putchar('0' + (multiplication / 10) % 10);
 				else if (second != 0)
 					_putchar(' ');
-
 				_putchar('0' + multiplication  % 10);
 				if (second < n)
 				{
@@ -33,7 +31,7 @@ void print_times_table(int n)
 				else
 				{
 					_putchar('\n');
-				}	
+				}
 				second++;
 			}
 			first++;
