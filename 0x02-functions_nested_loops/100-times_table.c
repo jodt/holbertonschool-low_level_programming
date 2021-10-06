@@ -13,38 +13,39 @@ void print_times_table(int n)
 	}
 	else
 	{
-	while (first <  n + 1)
-	{
-		second = 0;
-		compteur = 0;
-		while (second < n + 1)
+		while (first <  n + 1)
 		{
-			multiplication = first * second;
-			if (multiplication >= 100)
+			second = 0;
+			compteur = 0;
+			while (second < n + 1)
 			{
-				_putchar(' ');
-				_putchar('0' + multiplication / 100);
-				_putchar('0' + multiplication / 10 % 10);
-				_putchar('0' + multiplication % 10);
+				multiplication = first * second;
+				compteur != 0 ? _putchar(' ') : '\0';
+				if (multiplication >= 100)
+				{
+					_putchar('0' + multiplication / 100);
+					_putchar('0' + multiplication / 10 % 10);
+					_putchar('0' + multiplication % 10);
+				}
+				if (multiplication > 9 && multiplication < 100)
+				{
+					_putchar(' ');
+					_putchar('0' + multiplication / 10);
+					_putchar('0' + multiplication % 10);
+				}
+				if (multiplication < 10)
+				{	
+					if (compteur > 0)
+					{
+						_putchar(' ');
+						_putchar(' ');
+					}
+					_putchar('0' + multiplication  % 10);
+				}
+				compteur < n ? compteur++, _putchar(',') : _putchar('\n');
+				second++;
 			}
-			if (multiplication > 9 && multiplication < 100)
-			{
-				_putchar(' ');
-				_putchar(' ');
-				_putchar('0' + multiplication / 10);
-				_putchar('0' + multiplication % 10);
-			}
-			if (multiplication < 10)
-			{
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(' ');
-				_putchar('0' + multiplication  % 10);
-			}
-		compteur < n ? compteur++, _putchar(',') : _putchar('\n');
-		second++;
+			first++;
 		}
-		first++;
-	}
 	}
 }
