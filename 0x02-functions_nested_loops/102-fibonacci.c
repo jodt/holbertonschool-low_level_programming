@@ -18,9 +18,14 @@ int main(void)
 		temp = fibonacci_2;
 		fibonacci_2 += fibonacci_1;
 		fibonacci_1 = temp;
-		printf("%lu, ", fibonacci_2);
-	}
-		if (i == 50)
+		if (i == 49)
+		{
 			printf("%lu\n", fibonacci_2);
+		}
+		else
+		{
+			printf("%lu, ", fibonacci_2);
+		}
+	}
 	return (0);
 }
