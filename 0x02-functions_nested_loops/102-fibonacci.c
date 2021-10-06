@@ -5,22 +5,22 @@
  */
 int main(void)
 {
-	int compteur = 1;
+	int i = 0;
 	unsigned long int fibonacci_1 = 1, temp;
 	unsigned long int fibonacci_2 = 2;
 
 	printf("%lu, ", fibonacci_1);
-	compteur++;
+	i++;
 	printf("%lu, ", fibonacci_2);
-	compteur++;
-	while (compteur < 50)
+	i++;
+	for (i = 2; i < 50; i++)
 	{
 		temp = fibonacci_2;
 		fibonacci_2 += fibonacci_1;
 		fibonacci_1 = temp;
 		printf("%lu, ", fibonacci_2);
-		compteur++;
 	}
-	printf("%lu\n", fibonacci_2);
+		if (i == 50)
+			printf("%lu\n", fibonacci_2);
 	return (0);
 }
