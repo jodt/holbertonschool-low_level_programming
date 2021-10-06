@@ -1,9 +1,13 @@
 #include<stdio.h>
+/**
+ * main - print 50 first fibonnaci number
+ * Return: return 0
+ */
 int main(void)
 {
 	int compteur = 1;
 	int fibonacci_1 = 1, temp;
-	int64_t fibonacci_2 = 2;
+	unsigned int fibonacci_2 = 2;
 
 	printf("%d, ", fibonacci_1);
 	compteur++;
