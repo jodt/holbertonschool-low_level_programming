@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include"main.h"
 /**
- * main : insert fizz,buzz or fibuzz after a number
+ * main - insert fizz,buzz or fibuzz after a number
  *
  * Return: return 0;
  */
