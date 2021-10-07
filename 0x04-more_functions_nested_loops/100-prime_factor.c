@@ -1,6 +1,6 @@
 #include<stdio.h>
 /**
- * prime_factor - print le largest prime factor of a number
+ * main - print le largest prime factor of a number
  * Return: return 0
  */
 int main(void)
@@ -15,6 +15,6 @@ int main(void)
 			num = num / i;
 		}
 	}
-	printf("%ld\n",i);
+	printf("%ld\n", i);
 	return (0);
 }
