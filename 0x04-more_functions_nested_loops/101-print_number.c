@@ -9,7 +9,7 @@ void print_number(int n)
 
 	if (n < 0)
 	{
-		n = -n + (UINT_MAX + 1);
+		n = -n;
 		_putchar('-');
 	}
 	temp = n;
