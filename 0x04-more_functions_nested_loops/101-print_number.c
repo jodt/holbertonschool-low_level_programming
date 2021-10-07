@@ -5,7 +5,7 @@
  */
 void print_number(int n)
 {
-	int count = 0, temp, diviseur = 1;
+	unsigned int count = 0, temp, diviseur = 1;
 
 	if (n < 0)
 	{
