@@ -3,7 +3,7 @@
  * print_number - print an integer
  * @n: integer to print
  */
-void print_number(unsigned int n)
+void print_number(int n)
 {
 	int count = 0, temp, diviseur = 1;
 
