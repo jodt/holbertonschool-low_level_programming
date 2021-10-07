@@ -3,9 +3,9 @@
  * print_number - print an integer
  * @n: integer to print
  */
-void print_number(int n)
+void print_number(unsigned int n)
 {
-	unsigned int count = 0, temp, diviseur = 1;
+	int count = 0, temp, diviseur = 1;
 
 	if (n < 0)
 	{
