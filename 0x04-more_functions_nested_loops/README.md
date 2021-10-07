@@ -9,4 +9,6 @@ Project 6 : function that draws a straight line in the terminal
 Project 7 : function that draws a diagonal line on the terminal
 Project 8 : function that prints a square, followed by a new line
 Project 9 : “Fizz-Buzz test" program
-project 10: prints a triangle, followed by a new line.
+Project 10: prints a triangle, followed by a new line
+Porject 11: prints the largest prime factor of the number
+Project 12: function that prints an integer
