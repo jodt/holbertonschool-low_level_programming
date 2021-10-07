@@ -8,7 +8,7 @@ int main(void)
 	long int i;
 	long int num = 612852475143;
 
-	for (i = 2; num > 1; i++)
+	for (i = 2; i < num; i++)
 	{
 		while (num % i == 0)
 		{
