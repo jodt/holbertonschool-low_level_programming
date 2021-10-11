@@ -39,6 +39,6 @@ int _atoi(char *s)
 			number = -number;
 			}
 		}
-		return (number);
 	}
+	return (number);
 }
