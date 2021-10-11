@@ -9,7 +9,7 @@ void print_array(int *a, int n)
 {
 	int i = 0;
 
-	while (i < n)
+	while (n > 0 && i < n)
 	{
 		if (i == n - 1)
 			printf("%d\n", a[i++]);
