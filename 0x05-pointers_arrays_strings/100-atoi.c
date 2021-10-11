@@ -31,11 +31,13 @@ int _atoi(char *s)
 			{
 				number += (s[i] - 48) * 10;
 				exponent--;
+				i++;
 			}
-			i++;
 			number += (s[i] - 48);
-			if (s[position_first_integer - 1] == 45)
-				number = -number;
+		}
+		else if (s[position_first_integer - 1] == 45)
+		{
+			number = -number;
 		}
 		else
 		{
