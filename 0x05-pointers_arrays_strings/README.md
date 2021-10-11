@@ -7,3 +7,4 @@ Project 4 : function that prints a string, in reverse, followed by a new line
 Project 5 : function that reverses a string
 Project 6 : function that prints every other character of a string, starting with the first character, followed by a new line
 Project 7 : function that prints half of a string, followed by a new line
+Project 8 : function that prints n elements of an array of integers, followed by a new line
