@@ -34,15 +34,11 @@ int _atoi(char *s)
 				i++;
 			}
 			number += (s[i] - 48);
-		}
-		else if (s[position_first_integer - 1] == 45)
-		{
+			if (s[position_first_integer - 1] == 45)
+			{
 			number = -number;
+			}
 		}
-		else
-		{
-			return(0);
-		}
+		return (number);
 	}
-	return (number);
 }
