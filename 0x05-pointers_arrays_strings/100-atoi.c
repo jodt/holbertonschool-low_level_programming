@@ -8,13 +8,12 @@
  */
 int _atoi(char *s)
 {
-	int i, is_integer = 0, nombre = 0, sign = 1, first_digit = 0;
+	int i, is_integer = 0, nombre = 0, sign = 1;
 
 	for (i = 0; s[i]; i++)
 	{
 		if (s[i] > 47 && s[i] < 58)
 		{
-			first_digit = i;
 			is_integer++;
 			break;
 		}
@@ -24,6 +23,8 @@ int _atoi(char *s)
 	i = 0;
 	for (i = 0; s[i]; i++)
 	{
+		if (s[i] == '-')
+			sign = -sign;
 		if (s[i] > 47 && s[i] < 58)
 		{
 			nombre = nombre * 10 + (s[i] - '0');
@@ -31,8 +32,6 @@ int _atoi(char *s)
 			break;
 		}
 	}
-	if (s[first_digit - 1] == 45)
-		sign = -1;
 	nombre = nombre * sign;
 	return (nombre);
 }
