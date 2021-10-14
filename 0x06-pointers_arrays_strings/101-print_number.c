@@ -5,7 +5,7 @@
  */
 void print_number(int n)
 {
-	int temp = 0;
+	unsigned int temp = 0;
 
 	if (n < 0)
 	{
