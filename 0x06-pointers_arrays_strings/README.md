@@ -29,3 +29,4 @@ Project 6 : function that capitalizes all words of a string
 Project 7 : function that encodes a string into 1337
 Project 8 : function that encodes a string using rot13
 Project 9 : function that prints an integer
+Project 10 : program changes the value of an index array
