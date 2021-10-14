@@ -21,8 +21,6 @@ char *cap_string(char *str)
 				if (str[j] > 96 && str[j] < 123)
 					str[j] -= delt;
 			}
-			else
-				str[j] = str[j];
 		}
 	}
 	str[j] = '\0';
