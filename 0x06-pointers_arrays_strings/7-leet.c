@@ -1,6 +1,6 @@
 #include<stdio.h>
 /**
- * lett - encodes a string into 1337
+ * leet - encodes a string into 1337
  * @str: string
  *
  * Return: pointer to string encoded
