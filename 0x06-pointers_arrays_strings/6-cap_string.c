@@ -10,19 +10,17 @@ char *cap_string(char *str)
 	int i, j, delt = 'a' - 'A';
 	char separator[] = "\n\t ,;.!?\":(){}";
 
-	for (i = 0; separator[i]; i++)
+	for (i = 0; str[i]; i++)
 
 	{
-		for (j = 1; str[j]; j++)
+		for (j = 0; separator[j]; j++)
 		{
-			if (str[j] == separator[i])
+			if (str[i - 1] == separator[j] && str[i] > 96 && str[i] < 123)
 			{
-				j++;
-				if (str[j] > 96 && str[j] < 123)
-					str[j] -= delt;
+				str[i] -= delt;
 			}
 		}
 	}
-	str[j] = '\0';
+	str[i] = '\0';
 	return (str);
 }
