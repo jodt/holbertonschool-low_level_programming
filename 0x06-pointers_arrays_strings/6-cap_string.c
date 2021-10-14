@@ -14,7 +14,7 @@ char *cap_string(char *str)
 	{
 		for (j = 0; separator[j]; j++)
 		{
-			if (str[i] > 96 && str[i] < 123)
+			if (str[0] > 96 && str[0] < 123)
 				str[0] -= delt;
 			if (str[i - 1] == separator[j] && str[i] > 96 && str[i] < 123)
 			{
