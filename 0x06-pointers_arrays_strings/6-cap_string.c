@@ -15,8 +15,6 @@ char *cap_string(char *str)
 	{
 		for (j = 1; str[j]; j++)
 		{
-			if (str[j] == '\t')
-				str[j] = ' ';
 			if (str[j] == separator[i])
 			{
 				j++;
