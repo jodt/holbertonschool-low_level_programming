@@ -17,8 +17,6 @@ char *leet(char *str)
 		{
 			if (str[j] == letters[i])
 				str[j] = leet[i];
-			else
-				str[j] = str[j];
 		}
 	}
 	str[j] = '\0';
