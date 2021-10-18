@@ -11,7 +11,7 @@ void print_diagsums(int *a, int size)
 
 	for (i = 0; i < size * size; i += size + 1)
 		first_result += *(a + i);
-	for (j = size - 1; j <= size * size - size; j += size-1)
+	for (j = size - 1; j <= size * size - size; j += size - 1)
 		second_result += *(a + j);
 	printf("%d, %d\n", first_result, second_result);
 }
