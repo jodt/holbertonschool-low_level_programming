@@ -9,3 +9,4 @@ Project 3 : function that gets the length of a prefix substring
 Project 4 : function that searches a string for any of a set of bytes
 Project 5 : function that locates a substring
 Project 6 : function that prints the chessboard
+Project 7 : function that prints the sum of the two diagonals of a square matrix of integers
