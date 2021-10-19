@@ -78,8 +78,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		k++;
 	}
 	rev_string(r);
-	if (r[k] != '\0')
-		r[k] = '\0';
+	r[k] = '\0';
 	if (k >= size_r)
 		return (0);
 	return (r);
