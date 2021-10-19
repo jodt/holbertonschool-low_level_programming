@@ -48,7 +48,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	i = _strlen(n1) - 1;
 	j = _strlen(n2) - 1;
-	for (k = 0; i >= 0 || j >= 0; k++)
+	for (k = 0; (i >= 0 || j >= 0) && k < size_r; k++)
 	{
 		if (i >= 0 && j >= 0)
 			addition += (n1[i] - '0') + (n2[j] - '0');
@@ -71,15 +71,17 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		if (j >= 0)
 			j--;
 	}
+	if  (k >= size_r)
+		return (0);
 	if (i < 0 && j < 0 && addition == 1)
 	{
 		r[k] = 1 + '0';
 		r[k + 1] = '\0';
 		k++;
 	}
-	rev_string(r);
-	r[k] = '\0';
 	if (k >= size_r)
 		return (0);
+	rev_string(r);
+	r[k] = '\0';
 	return (r);
 }
