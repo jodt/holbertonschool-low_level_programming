@@ -5,7 +5,6 @@
  *
  * Return: length
  */
-#include<stdio.h>
 int _strlen_recursion(char *s)
 {
 	int length = 0;
