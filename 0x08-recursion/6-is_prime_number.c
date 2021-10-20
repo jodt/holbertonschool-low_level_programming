@@ -17,7 +17,7 @@ int checkprime(int n, int i)
 
 /**
  * is_prime_number - find  if the input integer is a prime number
- * @n integer
+ * @n: integer
  *
  * Return: 1 if the integer is a prime number
  */
