@@ -22,8 +22,6 @@ int lengthofstring(int n, char *s)
  */
 int issamecharacter(char *s, int  start, int length)
 {
-	
-
 	if (s[start] == s[length] && (start == length || start == length - 1))
 		return (1);
 	if (s[start] != s[length])
