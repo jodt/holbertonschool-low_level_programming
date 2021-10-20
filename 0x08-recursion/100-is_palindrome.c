@@ -22,13 +22,13 @@ int lengthofstring(int n, char *s)
  */
 int issamecharacter(char *s, int  start, int length)
 {
-	int i = 0;
+	
 
-	if (s[start] != s[length] && i <= length / 2)
-		return (0);
-	if (s[start] == s[length] && i == length / 2)
+	if (s[start] == s[length] && (start == length || start == length - 1))
 		return (1);
-	i++;
+	if (s[start] != s[length])
+		return (0);
+
 	return (issamecharacter(s, start + 1, length - 1));
 }
 /**
