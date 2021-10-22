@@ -16,10 +16,7 @@ int main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		if (atoi(argv[1]) < 0)
-		{
 			printf("0\n");
-			return (0);
-		}
 		else
 		{
 			for (i = 0; i < 5; i++)
@@ -29,8 +26,8 @@ int main(int argc, char *argv[])
 				if (temp)
 					coins += temp;
 			}
+			printf("%d\n", coins);
 		}
-		printf("%d\n", coins);
 		return (0);
 	}
 	printf("Error\n");
