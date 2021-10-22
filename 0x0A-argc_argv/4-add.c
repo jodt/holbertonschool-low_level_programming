@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 {
 	int i, isnumber = 1, sum = 0;
 	unsigned int j;
+
 	if (argc > 1)
 	{
 		for (i = 1; i < argc; i++)
