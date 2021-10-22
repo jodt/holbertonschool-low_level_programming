@@ -12,12 +12,7 @@ int main(int argc, char *argv[])
 	int cents [5] = {25, 10, 5, 2, 1};
 	int coins = 0, i = 0, temp, amount;
 
-	if (argv[argc] == NULL || argc != 2)
-	{
-		printf("Error\n");
-		return (1);
-	}
-	else
+	if (argc >= 2 && argc < 3)
 	{
 		amount = atoi(argv[1]);
 		if (atoi(argv[1]) < 0)
@@ -32,7 +27,10 @@ int main(int argc, char *argv[])
 					coins += temp;
 			}
 			printf("%d\n", coins);
+
 		}
+		return (0);
 	}
-	return (0);
+	printf("Error\n");
+	return (1);
 }
