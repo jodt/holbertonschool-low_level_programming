@@ -24,9 +24,17 @@ char *str_concat(char *s1, char *s2)
 	if (ptr == NULL)
 		return (NULL);
 	for (i = 0, j = 0; j < lengths1; i++, j++)
+	{
+		if (lengths1 == 1)
+			ptr[i] = '\0';
 		ptr[i] = s1[j];
+	}
 	for (k = 0; k < lengths2; i++, k++)
+	{
+		if (lengths2 == 1)
+			ptr[i] = '\0';
 		ptr[i] = s2[k];
+	}
 	ptr[i] = '\0';
 	return (ptr);
 }
