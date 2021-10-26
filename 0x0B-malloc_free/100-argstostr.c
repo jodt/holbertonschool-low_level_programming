@@ -12,10 +12,10 @@ char *argstostr(int ac, char **av)
 	char *ptr;
 	int i, j, k = 0, size = 0;
 
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 		size += (_strlen(av[i]) + 1);
 	ptr = malloc((size + 1) * sizeof(char));
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++, k++)
 			ptr[k] = av[i][j];
