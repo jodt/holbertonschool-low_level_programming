@@ -46,13 +46,11 @@ int *sizeofword(char *str, int word)
 		nc = 0;
 		while (str[j] == ' ')
 			j++;
-		while (str[j] != ' ' && str[j])
+		while (str[j] != ' ' && str[j] != '\0')
 		{
 			nc++;
 			j++;
 		}
-		if (!(str[j]))
-			break;
 		sizearray[i] = nc;
 		i++;
 	}
@@ -76,26 +74,39 @@ char **strtow(char *str)
 	if (word == 0)
 		return (NULL);
 	ptr = malloc((word + 1) * sizeof(char *));
+	if (ptr == NULL)
+		return (NULL);
 	sizeword = sizeofword(str, word);
+	if (sizeword == NULL)
+		return (NULL);
 	for (i = 0; i < word; i++)
+	{
 		ptr[i] = malloc((sizeword[i] + 1) * sizeof(int));
+		if (ptr[i] == NULL)
+		{
+			while (i >= 0)
+				free(ptr[i]);
+			free(ptr);
+			free(sizeword);
+			return (NULL);
+		}
+	}
 	i = 0;
 	while (i < word)
 	{
 		j = 0;
 		while (str[k] == ' ')
 			k++;
-		while (str[k] != ' ' && str[k])
+		while (str[k] != ' ' && str[k] != '\0')
 		{
 			ptr[i][j] = str[k];
 			j++;
 			k++;
 		}
-		if (str[k] == '\0')
-			break;
 		ptr[i][j] = '\0';
 		i++;
 	}
+	free(sizeword);
 	return (ptr);
 }
 /**
