@@ -64,7 +64,7 @@ char **strtow(char *str)
 	j = k = word = 0;
 	if (str == NULL)
 		return (NULL);
-	if (_strlen(str) == 0)
+	if (_strlen(str) == 0 || _strlen(str) == 1)
 		return (NULL);
 	word = numberofwords(str);
 	ptr = malloc((word + 1) * sizeof(char *));
