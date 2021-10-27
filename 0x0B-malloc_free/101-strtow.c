@@ -37,7 +37,7 @@ int numberofwords(char *str)
 char **strtow(char *str)
 {
 	char **ptr = {0};
-	int i, j = 0, k, nc = 0, wordbegin;
+	int i, j = 0, k, nc, wordbegin;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
@@ -50,27 +50,26 @@ char **strtow(char *str)
 	{
 		if (str[i] != ' ')
 		{
-			k = 0;
+			nc = k = 0;
 			wordbegin = i;
 			nc = wordlen(str + i);
 			if (nc > 0)
 				ptr[j] = malloc((nc + 1) * sizeof(char));
 			if (ptr[j] == NULL)
 			{
-				while (j > 0)
-					free(ptr[j]);
+				while (j >= 0)
+					free(ptr[j--]);
 				free(ptr);
 				return (NULL);
 			}
-			nc = 0;
 			i = wordbegin;
-			while (str[i] != ' ' && str[i])
+			while (str[i] != ' ' && str[i + 1])
 			{
 				ptr[j][k] = str[i];
 				i++;
 				k++;
 			}
-			ptr[j][k] = '\0';
+			ptr[j][k] = str[i];
 			j++;
 		}
 	}
