@@ -6,4 +6,5 @@ Project 2 : function that concatenates two strings
 Project 3 : function that returns a pointer to a 2 dimensional array of integers
 Project 4 : function that frees a 2 dimensional grid previously created by your alloc_grid function.
 Project 5 : function that concatenates all the arguments of your program
+Project 6 : function that splits a string into words
 
