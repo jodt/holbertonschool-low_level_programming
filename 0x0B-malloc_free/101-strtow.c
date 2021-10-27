@@ -69,9 +69,8 @@ char **strtow(char *str)
 				i++;
 				k++;
 			}
-			ptr[j][k++] = str[i];
-			ptr[j][k] = '\0';
-			
+			if (!(str[i + 1]))
+				ptr[j][k] = str[i];
 			j++;
 		}
 	}
