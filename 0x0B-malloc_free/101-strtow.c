@@ -24,7 +24,6 @@ int numberofwords(char *str)
 		}
 		i++;
 	}
-
 	return (word);
 }
 
@@ -74,6 +73,8 @@ char **strtow(char *str)
 	if (str == NULL || *str == '\0')
 		return (NULL);
 	word = numberofwords(str);
+	if (word == 0)
+		return (NULL);
 	ptr = malloc((word + 1) * sizeof(char *));
 	sizeword = sizeofword(str, word);
 	for (i = 0; i < word; i++)
