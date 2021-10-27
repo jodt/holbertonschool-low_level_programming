@@ -1,5 +1,7 @@
 #include<stdlib.h>
 #include"main.h"
+#define IN 1
+#define OUT 0
 /**
  * numberofwords - count words of a string
  * @str: string
@@ -8,14 +10,21 @@
  */
 int numberofwords(char *str)
 {
-	int i = 0, word = 0;
+	int i = 0, word = 0, inword;
 
-	for (i = 0; str[i]; i++)
+	inword = OUT;
+	while (str[i])
 	{
-		if (str[i] != ' ' && str[i])
-			if (str[i - 1] == ' ')
-				word++;
+		if (str[i] == ' ')
+			inword = OUT;
+		else if (inword == OUT)
+		{
+			inword = IN;
+			word++;
+		}
+		i++;
 	}
+
 	return (word);
 }
 
@@ -62,9 +71,7 @@ char **strtow(char *str)
 	int i, j, k, word, *sizeword;
 
 	j = k = word = 0;
-	if (str == NULL)
-		return (NULL);
-	if (_strlen(str) == 0 || _strlen(str) == 1)
+	if (str == NULL || *str == '\0')
 		return (NULL);
 	word = numberofwords(str);
 	ptr = malloc((word + 1) * sizeof(char *));
