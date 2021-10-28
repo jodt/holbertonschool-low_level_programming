@@ -9,9 +9,9 @@
  */
 int *array_range(int min, int max)
 {
-	int *ptr, i, numberofelements;
+	int *ptr, i = 0, numberofelements = 0;
 
-	numberofelements = max - min + 1;
+	numberofelements = (max - min + 1);
 	if (min > max)
 		return (NULL);
 	if (min == max)
@@ -28,8 +28,8 @@ int *array_range(int min, int max)
 			return (NULL);
 		for (i = 0; i < numberofelements; i++)
 		{
-		       ptr[i] = min;
-		       min++;
+			ptr[i] = min;
+			min++;
 		}
 	}
 	return (ptr);
