@@ -1,4 +1,5 @@
 #include<stdlib.h>
+#include<stdio.h>
 #include"main.h"
 /**
  * string_nconcat - concatenate two strings
@@ -10,7 +11,7 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j, lengths1, lengths2;
+	unsigned int i, j, lengths1 = 0, lengths2 = 0;
 	char *ptr;
 
 	if (s1 == NULL)
@@ -18,7 +19,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	else
 		lengths1 = _strlen(s1);
 	if (s2 == NULL)
-		lengths2 = 0;
+		n = lengths2 = 0;
 	else
 	{
 		lengths2 = _strlen(s2);
@@ -27,21 +28,21 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	ptr = malloc((lengths1 + n + 1) * sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
-	if (lengths1 == 0  && lengths2 == 0)
+	if (lengths1 == 0 && lengths2 == 0)
 		*ptr = '\0';
-	if (lengths2 == 0)
+	if (lengths1 != 0 && lengths2 == 0)
 	{
 		for (i = 0; s1[i]; i++)
 			ptr[i] = s1[i];
 		ptr[i] = '\0';
 	}
-	else if (lengths1 == 0)
+	else if (lengths1 == 0 && lengths2 != 0)
 	{
 		for (i = 0; i < n; i++)
 			ptr[i] = s2[i];
 		ptr[i] = '\0';
 	}
-	else
+	else if (lengths1 != 0 && lengths2 != 0)
 	{
 		for (i = 0; s1[i]; i++)
 			ptr[i] = s1[i];
