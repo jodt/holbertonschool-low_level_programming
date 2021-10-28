@@ -17,15 +17,15 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size == old_size)
 		return (ptr);
 
-	if (ptr == NULL && new_size == 0)
+	else if (ptr == NULL && new_size == 0)
 		free(ptr);
-	else
+	else if (ptr == NULL)
 	{
 		ptr = malloc(new_size);
 		if (ptr == NULL)
 			return (NULL);
 	}
-	if (new_size > old_size && ptr != NULL)
+	else if (new_size > old_size && ptr != NULL)
 	{
 		new_ptr = malloc(new_size);
 		numberofelements = old_size / sizeof(char);
