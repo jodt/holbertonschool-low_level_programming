@@ -15,6 +15,8 @@ char *str_copie(char *str)
 	while (str[i])
 		i++;
 	copie = malloc((i + 1) * sizeof(char));
+	if (copie == NULL)
+		return (NULL);
 	for (i = 0; str[i]; i++)
 		copie[i] = str[i];
 	copie[i] = '\0';
