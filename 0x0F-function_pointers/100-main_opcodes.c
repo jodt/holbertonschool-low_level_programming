@@ -25,12 +25,15 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
+	if (ptr_main != NULL)
+	{
 	for (i = 0; i < atoi(argv[1]); i++)
 	{
 		printf("%02x", (unsigned char)*(ptr + i));
 		printf(" ");
 	}
 	printf("\n");
+	}
 	return (0);
 }
 
