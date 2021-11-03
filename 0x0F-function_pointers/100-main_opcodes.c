@@ -28,9 +28,11 @@ int main(int argc, char *argv[])
 	for (i = 0; i < atoi(argv[1]); i++)
 	{
 		printf("%02x", (unsigned char)*(ptr + i));
+		if (i == (atoi(argv[1]) - 1))
+			printf("\n");
+		else
 		printf(" ");
 	}
-	printf("\n");
 	return (0);
 }
 
