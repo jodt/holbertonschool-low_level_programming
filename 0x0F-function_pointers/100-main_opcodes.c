@@ -27,9 +27,8 @@ int main(int argc, char *argv[])
 	}
 	for (i = 0; i < atoi(argv[1]); i++)
 	{
-		if (i != 0)
-			printf(" ");
-		printf("%02x", *(ptr + i));
+		printf("%02x", (unsigned char)*(ptr + i));
+		printf(" ");
 	}
 	printf("\n");
 	return (0);
