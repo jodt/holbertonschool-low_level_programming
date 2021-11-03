@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 {
 	int (*ptr_main)(int, char **) = main;
 	int i;
-	char *ptr = (char *)&ptr_main;
+	char *ptr = (char *)ptr_main;
 
 	if (argc != 2)
 	{
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	}
 	for (i = 0; i < atoi(argv[1]); i++)
 	{
-		printf("%02x", (unsigned char)*(ptr + i));
+		printf("%02x", (unsigned char) *(ptr + i));
 		if (i == (atoi(argv[1]) - 1))
 			printf("\n");
 		else
