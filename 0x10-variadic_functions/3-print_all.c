@@ -15,12 +15,12 @@ void print_all(const char * const format, ...)
 	int i = 0, j = 0;
 
 	va_start(arglist, format);
-	while (format[i])
+	while (format != NULL && format[i])
 	{
 		j = 0;
 		while (j < 4)
 		{
-			if (format[i] == tps[j].c && tps[j].ptr_f != NULL)
+			if (format[i] == tps[j].c)
 			{
 				tps[j].ptr_f(arglist);
 				if (format[i + 1] != '\0')
