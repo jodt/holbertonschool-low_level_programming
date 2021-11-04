@@ -65,7 +65,7 @@ void print_float(va_list arglist)
  */
 void print_string(va_list arglist)
 {
-	char *str = va_arg(arglist, char *);
+	char *str = (char *) va_arg(arglist, char *);
 
 	if (str == NULL || *str == '\0')
 		str = "(nil)";
