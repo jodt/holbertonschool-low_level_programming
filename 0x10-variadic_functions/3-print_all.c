@@ -1,40 +1,5 @@
 #include"variadic_functions.h"
 /**
- * print_int - print int element
- * @arglist: element of list
- */
-void print_int(va_list arglist)
-{
-	printf("%d", va_arg(arglist, int));
-}
-/**
- * print_char - print char element
- * @arglist: element of list
- */
-void print_char(va_list arglist)
-{
-	printf("%c", va_arg(arglist, int));
-}
-/**
- * print_float - print float element
- * @arglist: element of list
- */
-void print_float(va_list arglist)
-{
-	printf("%f", va_arg(arglist, double));
-}
-/**
- * print_string - print string element
- * @arglist: element of list
- */
-void print_string(va_list arglist)
-{
-	if (va_arg(arglist, char *) != NULL)
-		printf("%s", va_arg(arglist, char *));
-	else
-		printf("(nil)");
-}
-/**
  * print_all -  function that prints anything
  * @format: list of types of arguments passed to the function
  */
@@ -68,4 +33,39 @@ void print_all(const char * const format, ...)
 	}
 	printf("\n");
 	va_end(arglist);
+}
+/**
+ * print_int - print int element
+ * @arglist: element of list
+ */
+void print_int(va_list arglist)
+{
+	printf("%d", va_arg(arglist, int));
+}
+/**
+ * print_char - print char element
+ * @arglist: element of list
+ */
+void print_char(va_list arglist)
+{
+	printf("%c", va_arg(arglist, int));
+}
+/**
+ * print_float - print float element
+ * @arglist: element of list
+ */
+void print_float(va_list arglist)
+{
+	printf("%f", va_arg(arglist, double));
+}
+/**
+ * print_string - print string element
+ * @arglist: element of list
+ */
+void print_string(va_list arglist)
+{
+	if (va_arg(arglist, char *) != NULL)
+		printf("%s", va_arg(arglist, char *));
+	else
+		printf("(nil)");
 }
