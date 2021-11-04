@@ -67,10 +67,7 @@ void print_string(va_list arglist)
 {
 	char *str = va_arg(arglist, char *);
 
-	if (str != NULL)
-	{
-		printf("%s", str);
-		return;
-	}
-	printf("(nil)");
+	if (str == NULL)
+		str = "(nil)";
+	printf("%s", str);
 }
