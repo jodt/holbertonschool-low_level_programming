@@ -24,12 +24,12 @@ void print_all(const char * const format, ...)
 			if (format[i] == tps[j].c)
 			{
 				printf("%s", separator);
+				separator = ", ";
 				tps[j].ptr_f(arglist);
 				break;
 			}
 			j++;
 		}
-		separator = ", ";
 		i++;
 	}
 	printf("\n");
@@ -65,9 +65,9 @@ void print_float(va_list arglist)
  */
 void print_string(va_list arglist)
 {
-	char *str = (char *) va_arg(arglist, char *);
+	char *str = va_arg(arglist, char *);
 
-	if (str == NULL || *str == '\0')
+	if (str == NULL)
 		str = "(nil)";
 	printf("%s", str);
 }
