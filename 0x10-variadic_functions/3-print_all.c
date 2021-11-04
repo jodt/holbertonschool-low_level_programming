@@ -13,6 +13,7 @@ void print_all(const char * const format, ...)
 		{'s', print_string}
 	};
 	int i = 0, j = 0;
+	char *separator = "";
 
 	va_start(arglist, format);
 	while (format != NULL && format[i])
@@ -22,20 +23,20 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == tps[j].c)
 			{
+				printf("%s", separator);
 				tps[j].ptr_f(arglist);
-				if (format[i + 1] != '\0')
-					printf(", ");
 				break;
 			}
 			j++;
 		}
+		separator = ", ";
 		i++;
 	}
 	printf("\n");
 	va_end(arglist);
 }
 /**
- * print_int - print int element
+ * print_int - prints int element
  * @arglist: element of list
  */
 void print_int(va_list arglist)
@@ -43,7 +44,7 @@ void print_int(va_list arglist)
 	printf("%d", va_arg(arglist, int));
 }
 /**
- * print_char - print char element
+ * print_char - prints char element
  * @arglist: element of list
  */
 void print_char(va_list arglist)
@@ -51,7 +52,7 @@ void print_char(va_list arglist)
 	printf("%c", va_arg(arglist, int));
 }
 /**
- * print_float - print float element
+ * print_float - prints float element
  * @arglist: element of list
  */
 void print_float(va_list arglist)
@@ -59,10 +60,15 @@ void print_float(va_list arglist)
 	printf("%f", va_arg(arglist, double));
 }
 /**
- * print_string - print string element
+ * print_string - prints string element
  * @arglist: element of list
  */
 void print_string(va_list arglist)
 {
+	if (va_arg(arglist, char *) == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
 	printf("%s", va_arg(arglist, char *));
 }
