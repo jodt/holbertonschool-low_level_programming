@@ -1,5 +1,8 @@
 #ifndef __VARIADIC_FUNCTIONS_H__
 #define __VARIADIC_FUNCTIONS_H__
+#include<stdio.h>
+#include<stdlib.h>
+#include<stdarg.h>
 /**
  * struct type - struct type
  * @c: character;
