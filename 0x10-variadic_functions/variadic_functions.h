@@ -6,13 +6,12 @@
 /**
  * struct type - struct type
  * @c: character;
- * @s: type associated to character
- * @specifier: format type
+ * @ptr_f: pointer to function
  */
 typedef struct type
 {
 	int c;
-	void(*ptr_f)(va_list);
+	void (*ptr_f)(va_list);
 } tp;
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
