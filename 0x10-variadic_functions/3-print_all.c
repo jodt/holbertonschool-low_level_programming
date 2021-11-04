@@ -20,7 +20,7 @@ void print_all(const char * const format, ...)
 		j = 0;
 		while (j < 4)
 		{
-			if (format[i] == tps[j].c)
+			if (format[i] == tps[j].c && tps[j].ptr_f != NULL)
 			{
 				tps[j].ptr_f(arglist);
 				if (format[i + 1] != '\0')
