@@ -1,6 +1,7 @@
 #include"variadic_functions.h"
 #include<stdarg.h>
 #include<stdio.h>
+#include<stdlib.h>
 /**
  * print_numbers - prints numbers
  * @separator: string printed between number
@@ -11,8 +12,8 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_list arglist;
 	unsigned int i;
 
-	if (n == 0 || separator == NULL)
-		return;
+	if (n == 0 &&  separator == NULL)
+		exit(0);
 	va_start(arglist, n);
 	for (i = 0; i < n; i++)
 	{
