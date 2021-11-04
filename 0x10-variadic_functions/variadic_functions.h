@@ -4,13 +4,14 @@
  * struct type - struct type
  * @c: character;
  * @s: type associated to character
+ * @specifier: format type
  */
 typedef struct type
 {
 	int c;
 	char *s;
 	char *specifier;
-}tp;
+} tp;
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
