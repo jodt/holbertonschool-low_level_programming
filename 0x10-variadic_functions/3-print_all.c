@@ -64,8 +64,5 @@ void print_float(va_list arglist)
  */
 void print_string(va_list arglist)
 {
-	if (va_arg(arglist, char *) != NULL)
-		printf("%s", va_arg(arglist, char *));
-	else
-		printf("(nil)");
+	printf("%s", va_arg(arglist, char *));
 }
