@@ -15,6 +15,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		number_of_elements++;
 	if ((index + 1) > number_of_elements)
 		return (NULL);
+	temp = head;
 	if (head == NULL)
 		return (NULL);
 
