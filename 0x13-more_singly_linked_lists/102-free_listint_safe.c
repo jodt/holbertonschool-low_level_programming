@@ -10,7 +10,8 @@ size_t free_listint_safe(listint_t **h)
 {
 	listint_t *node, *current_node;
 	size_t count = 0;
-
+	if (h == NULL || *h == NULL)
+		return (0);
 	node = current_node = *h;
 	current_node = current_node->next;
 	check_address(*h, node, current_node);
