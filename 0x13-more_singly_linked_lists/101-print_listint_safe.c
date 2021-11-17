@@ -25,7 +25,6 @@ size_t print_listint_safe(const listint_t *head)
 			if (ptr == head)
 			{
 				printf("-> [%p] %d\n", (void *) head, head->n);
-				node++;
 				return (node);
 			}
 			check++;
