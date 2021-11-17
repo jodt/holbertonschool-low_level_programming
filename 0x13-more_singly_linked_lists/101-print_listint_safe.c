@@ -10,9 +10,9 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *ptr, *start;
 	size_t node = 0, check = 0;
 
-	ptr = start = head;
 	if (head == NULL)
 		exit(98);
+	ptr = start = head;
 	while (head != NULL)
 	{
 		printf("[%p] %d\n", (void *) head, head->n);
