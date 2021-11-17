@@ -42,7 +42,7 @@ void check_address(listint_t *start_list, listint_t *node, listint_t *current)
 		number_of_node++;
 		while (index < number_of_node)
 		{
-			if (node == current)
+			if (node == current->next)
 			{
 				current->next = NULL;
 				return;
