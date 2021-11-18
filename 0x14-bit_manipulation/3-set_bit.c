@@ -9,15 +9,9 @@
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned int result = 1;
+	unsigned int modified_bit;
 
-	if (index > 31)
-		return (-1);
-	while (index > 0)
-	{
-		result <<= 1;
-		index--;
-	}
-	*n += result;
+	modified_bit = (1 << index);
+	*n |= modified_bit;
 	return (1);
 }
