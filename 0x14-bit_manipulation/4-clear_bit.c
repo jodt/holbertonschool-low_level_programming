@@ -9,32 +9,17 @@
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int i = 0, j = 0, result = 1, exponent, number = 0;
-	unsigned int rest [32] = {0};
+	unsigned long int modified_bit;
 
 	if (index > 31)
 		return (-1);
-	while (*n)
-	{
-		rest[i++] = (*n - (2 * (*n >> 1)));
-		*n = *n >> 1;
-	}
-	rest[index] = 0;
-	while (j < 32)
-	{
-		if (rest[j] == 1)
-		{
-			exponent = j;
-			result = 1;
-			while (exponent > 0)
-			{
-				result *= 2;
-				exponent--;
-			}
-			number += result;
-			*n = number;
-		}
-		j++;
-	}
+
+	modified_bit = (1 << index);
+
+	if (*n != modified_bit)
+		*n = *n & ~modified_bit;
+	else
+		*n = *n ^ modified_bit;
+
 	return (1);
 }
