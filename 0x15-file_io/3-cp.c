@@ -1,5 +1,4 @@
 #include"main.h"
-int error(char *mode, char *name_file, int error_code);
 /**
  * main - copies the content of a file to another file.
  * @argc: number of arguments
