@@ -21,9 +21,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buff == NULL)
 		return (0);
 	characters_number = read(fd, buff, letters);
+	close(fd);
 	if (write(STDOUT_FILENO, buff, letters) == -1)
 		return (0);
 	free(buff);
-	close(fd);
 	return (characters_number);
 }
