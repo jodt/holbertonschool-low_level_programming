@@ -19,18 +19,28 @@ int main(int argc, char **argv)
 	}
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_to == -1)
-		exit(error("write", argv[2], 99));
+	{
+		dprintf(2, "Error: Can't write to %s\n", argv[2]);
+		exit(98);
+	}
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
-		exit(error("read", argv[1], 98));
-	while (ch_read > 0)
 	{
+		dprintf(2, "Error: Can't read to %s\n", argv[2]);
+		exit(99);
+	}
+	while (ch_read > 0)
 		ch_read = read(file_from, buf, BUFSIZE);
 		if (ch_read == -1)
-			exit(error("read", argv[1], 98));
+		{
+			dprintf(2, "Error: Can't read to %s\n", argv[2]);
+			exit(99);
+		}
 		if (write(file_to, buf, ch_read) == -1)
-			exit(error("write", argv[2], 99));
-	}
+		{
+			dprintf(2, "Error: Can't read to %s\n", argv[2]);
+			exit(98);
+		}
 	if (close(file_to) == -1)
 	{
 		dprintf(2, "Error: Can't close fd %d\n", file_to);
@@ -42,19 +52,5 @@ int main(int argc, char **argv)
 		exit(100);
 	}
 	return (0);
-}
+	}
 
-
-/**
- * error - print the error and exit
- * @mode : read, write or close
- * @name_file: name of the file ou fd
- * @error_code: int of the error code
- *
- * Return: error code
- */
-int error(char *mode, char *name_file, int error_code)
-{
-	dprintf(2, "Error : Can't %s to %s\n", mode, name_file);
-	return (error_code);
-}
