@@ -53,6 +53,6 @@ int main(int argc, char **argv)
  */
 void error(char *mode, char *name_file, int error_code)
 {
-	dprintf(2, "Error : can't %s to %s\n", mode, name_file);
+	dprintf(2, "Error : Can't %s to %s\n", mode, name_file);
 	exit(error_code);
 }
