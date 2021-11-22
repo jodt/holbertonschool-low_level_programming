@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", argv[2]);
 			exit(98);
 		}
-		ch_write = write(file_to, buf, ch_read) == -1;
+		ch_write = write(file_to, buf, ch_read);
 		if (ch_write == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
