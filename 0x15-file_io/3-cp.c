@@ -8,7 +8,7 @@
  */
 int main(int argc, char **argv)
 {
-	int file_to, file_from, ch_read;
+	int file_to, file_from, ch_read, ch_write;
 	char buf[BUFSIZE];
 
 	if (argc != 3)
@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", argv[2]);
 		exit(98);
 	}
-	while ((ch_read = read(file_from, buf, BUFSIZE)) != 0)
+	while ((ch_read = read(file_from, buf, BUFSIZE)) > 0)
 	{
 
 		if (ch_read == -1)
@@ -36,7 +36,8 @@ int main(int argc, char **argv)
 			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", argv[2]);
 			exit(98);
 		}
-		if (write(file_to, buf, ch_read) == -1)
+		ch_write = write(file_to, buf, ch_read) == -1;
+		if (ch_write == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
