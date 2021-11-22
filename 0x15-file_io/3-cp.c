@@ -29,6 +29,7 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 	while (ch_read > 0)
+	{
 		ch_read = read(file_from, buf, BUFSIZE);
 		if (ch_read == -1)
 		{
@@ -40,6 +41,7 @@ int main(int argc, char **argv)
 			dprintf(2, "Error: Can't read to %s\n", argv[2]);
 			exit(98);
 		}
+	}
 	if (close(file_to) == -1)
 	{
 		dprintf(2, "Error: Can't close fd %d\n", file_to);
@@ -51,5 +53,4 @@ int main(int argc, char **argv)
 		exit(100);
 	}
 	return (0);
-	}
-
+}
