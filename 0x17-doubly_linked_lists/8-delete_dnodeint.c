@@ -2,7 +2,7 @@
 ssize_t length_of_the_list(dlistint_t **h);
 /**
  * delete_dnodeint_at_index - deletes the node at index index of a linked list
- * @heas: address of the pointer of the head element
+ * @head: address of the pointer of the head element
  * @index: index where the new node will be insert
  *
  * Return: 1 if success else -1
@@ -15,8 +15,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	if (head == NULL || *head == NULL)
 		return (-1);
 	length = length_of_the_list(&*head);
-	if (length == 0)
-		return (-1);
 	if (index >= length)
 		return (-1);
 	temp = *head;
