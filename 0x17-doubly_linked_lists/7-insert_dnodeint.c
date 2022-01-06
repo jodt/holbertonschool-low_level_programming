@@ -1,5 +1,4 @@
 #include "lists.h"
-
 /**
  * sum_dlistint - returns the sum of all the data (n) of a linked list
  * @h: address of the pointer of the head element
@@ -38,7 +37,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		(*h)->prev = new;
 		new->prev = NULL;
-		new->next = (*h)->next;
+		new->next = (*h);
 		*h = new;
 		return (new);
 	}
