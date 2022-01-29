@@ -82,7 +82,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		{
 			if (temp_shead->snext == NULL)
 			{
-				if (compare_key(temp_shead->key, new_node->key) < 0)
+				if (strcmp(temp_shead->key, new_node->key) < 0)
 				{
 					temp_shead->snext = new_node;
 					new_node->sprev = temp_shead;
@@ -102,7 +102,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			}
 			if (temp_shead->snext->key[0] <= new_node->key[0])
 			{
-				while (temp_shead->snext && compare_key(temp_shead->snext->key, new_node->key) < 0)
+				while (temp_shead->snext && strcmp(temp_shead->snext->key, new_node->key) < 0)
 				{
 					temp_shead = temp_shead->snext;
 				}
@@ -120,7 +120,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 				temp_shead->snext = new_node;
 				return (1);
 			}
-			if (compare_key(temp_shead->snext->key, new_node->key) > 0)
+			if (strcmp(temp_shead->snext->key, new_node->key) > 0)
 			{
 				new_node->snext = temp_shead;
 				new_node->sprev = NULL;
@@ -209,28 +209,4 @@ void shash_table_delete(shash_table_t *ht)
 	}
 	free(ht->array);
 	free(ht);
-}
-
-int compare_key(char *str, char *str2)
-{
-	int i = 0, j = 0;
-
-	if (strlen(str) == strlen(str2))
-	{
-		while (str && str[i] == str2[i])
-			i++;
-		return str[i] - str2[i];
-	}
-	else
-	{
-		while ((str[j] || str2[j]) && str[j] == str2[j])
-			j++;
-		if (str[j] && str2[j] && str[j] != str2[j])
-			return (str[j] - str2[j]);
-		else if (!str[j] && str2[j])
-			return 0 - str2[j];
-		else if ((str[j] && !str2[j]))
-			return str[j] - 0;
-	}
-	return (0);
 }
