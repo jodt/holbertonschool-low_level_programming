@@ -20,10 +20,11 @@ def island_perimeter(grid):
     """
     if (len(grid) > 100):
         return
+    len_lst = grid[0]
     for lst in grid:
-        if len(lst) != len(grid):
-            return
         if len(lst) > 100:
+            return
+        if len(lst) != len_lst:
             return
     perimeter = 0
     for i in range(1, len(grid)):
