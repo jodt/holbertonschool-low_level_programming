@@ -18,14 +18,6 @@ def island_perimeter(grid):
                 Grid is completely surrounded by water,
                 and there is one island (or nothing).
     """
-    if (len(grid) > 100):
-        return
-    len_lst = len(grid[0])
-    for lst in grid:
-        if len(lst) > 100:
-            return
-        if len(lst) != len_lst:
-            return
     perimeter = 0
     for i in range(1, len(grid)):
         for j in range(1, len(grid)):
