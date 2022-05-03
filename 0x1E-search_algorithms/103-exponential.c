@@ -1,5 +1,5 @@
 #include "search_algos.h"
-#include <math.h>
+int powof2(int x);
 /**
  * exponential_search -  function that searches for a
  * value in a sorted array of integers using Exponential search algorithm
@@ -9,36 +9,48 @@
  * @value: value to find
  * Return: value index or -1
  */
+
+
+
 int exponential_search(int *array, size_t size, int value)
 {
 	size_t i = 0;
-	int pos = (pow(2, 0)), end = size - 1, size_array, result;
+	int pos = powof2(0), end = size - 1, size_array, result;
 
 	if (array)
 	{
-		while (value > array[pos] && (pow(2, i + 1)) < (int)size)
+		while (value > array[pos] && (powof2(i + 1)) < (int)size)
 		{
-			if (value <= pow(2, i + 1))
+			if (value <= powof2(i + 1))
 			{
-				end = pow(2, i + 1);
+				end = powof2(i + 1);
 				break;
 			}
 			printf("Value checked array[%d] = [%d]\n", pos, array[pos]);
 			i++;
-			pos = pow(2, i);
+			pos = powof2(i);
 		}
 
 		printf("Value found between indexes [%d] and [%d]\n", pos, end);
 		size_array = end - pos + 1;
 		result = binary_search(array + pos, size_array, value);
 		if (result != -1)
-			return result + pos;
+			return (result + pos);
 		else
-			return result;
+			return (result);
 	}
 	return (-1);
 }
 
+/**
+ * binary_search - searches for a value in a sorted array of integers
+ *  using the Binary search algorithm
+ *
+ * @array: array of integers
+ * @size: array size
+ * @value: value to find
+ * Return: index of the value or -1
+ */
 int binary_search(int *array, size_t size, int value)
 {
 	size_t left = 0, middle = 0, i;
@@ -67,4 +79,17 @@ int binary_search(int *array, size_t size, int value)
 		}
 	}
 	return (-1);
+}
+
+/**
+ * powof2 - returns the power of two of a number
+ *
+ * @x: number
+ * Return: the power of two of a number
+ */
+int powof2(int x)
+{
+	if (x == 0)
+		return (1);
+	return (2 * powof2(x - 1));
 }
