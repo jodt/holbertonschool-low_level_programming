@@ -17,12 +17,13 @@ int jump_search(int *array, size_t size, int value)
 	while (start < size)
 	{
 		printf("Value checked array[%ld] = [%d]\n", start, array[start]);
-		if ((size_t)value > jump)
+		if (value > array[jump])
 		{
-			start = jump;
-			jump += interval;
 			if (jump > size)
 				break;
+			start = jump;
+			jump += interval;
+
 		}
 		else
 			break;
