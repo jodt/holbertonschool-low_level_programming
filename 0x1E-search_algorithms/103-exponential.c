@@ -30,7 +30,7 @@ int exponential_search(int *array, size_t size, int value)
 			i++;
 			pos = powof2(i);
 		}
-
+		printf("Value checked array[%d] = [%d]\n", pos, array[pos]);
 		printf("Value found between indexes [%d] and [%d]\n", pos, end);
 		size_array = end - pos + 1;
 		result = binary_search(array + pos, size_array, value);
