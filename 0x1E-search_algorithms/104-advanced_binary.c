@@ -41,7 +41,7 @@ int binary_recur(int *array, int left, int right, size_t size, int value)
 	}
 	if (left == right || array[left] == array[right])
 	{
-		if (value == array[left] || value == array[left])
+		if (value == array[left])
 			return (left);
 		else
 			return (-1);
