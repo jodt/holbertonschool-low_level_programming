@@ -1,5 +1,11 @@
 #include "search_algos.h"
-
+/**
+ * linear_skip - function that searches value in a sorted skip list of integers
+ *
+ * @list: first node pointer
+ * @value: value to find
+ * Return: Node or Null
+ */
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
 	skiplist_t *temp, *start, *end;
@@ -26,12 +32,13 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 			start = temp;
 		}
 		printf("Value checked at index [%ld] = [%d]\n", end->index, end->n);
-		printf("Value found between indexes [%ld] and [%ld]\n", start->index, end->index);
+		printf("Value found between indexes [%ld] and [%ld]\n",
+		 start->index, end->index);
 		while (start != end->next)
 		{
 			printf("Value checked at index [%ld] = [%d]\n", start->index, start->n);
 			if (value == start->n)
-				return start;
+				return (start);
 			start = start->next;
 		}
 	}
