@@ -31,6 +31,8 @@ int binary_recur(int *array, int left, int right, size_t size, int value)
 
 	int middle = (left + right) / 2, i = 0;
 
+	if (value < array[0])
+		return (-1);
 	printf("Searching in array: ");
 	for (i = left; i <= right; i++)
 	{
